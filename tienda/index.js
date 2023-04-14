@@ -3,6 +3,8 @@ document.getElementById("targeta").style.display = 'none';
 document.getElementById("comprar2").style.display = 'none';
 document.getElementById("telefono").style.display = 'none';
 document.getElementById("nombrecompro").style.display = 'none';
+let nombre =document.getElementById("nombrecom")
+nombre.style.display = 'none'
 
 document.getElementById("log").onclick = function(){
     let result = document.getElementById("search").value 
@@ -85,6 +87,8 @@ document.getElementById("comprar").onclick = function(){
     document.getElementById("targeta").style.display = 'flex';
     document.getElementById("telefono").style.display = 'flex';
     document.getElementById("nombrecompro").style.display = 'flex';
+    nombre.style.display='flex'
+    
 //nombrecompro
     let libro = document.getElementById("search").value
     /*
@@ -95,6 +99,7 @@ document.getElementById("comprar").onclick = function(){
     document.getElementById("nombrecompro").textContent = "Quieres comprar: "+libro
     document.getElementById("comprar2").style.display = 'flex';
     document.getElementById("comprar").style.display = 'none';
+   
 
 
 }
@@ -104,15 +109,28 @@ document.getElementById("comprar2").onclick = function(){
     let targeta =document.getElementById("targeta").value
     let telefono =document.getElementById("telefono").value
     let libro = document.getElementById("search").value
+    let nombre1 = nombre.value
 
-    console.log(targeta)
-    console.log(telefono)
+   // console.log(targeta)
+    //console.log(telefono)
+
+    let cookie=document.cookie=
+    `Nombre: ${nombre1}
+     Targeta: ${targeta}
+     Telefono: ${telefono} 
+     Libro: ${libro} 
+     Fecha: ${Date()}
+     path/ `
+    
+    console.log(cookie)
 
     document.getElementById("targeta").style.display = 'none';
 document.getElementById("comprar2").style.display = 'none';
 document.getElementById("telefono").style.display = 'none';
+nombre.style.display="none"
 document.getElementById("comprar").style.display = 'flex';
 document.getElementById("nombrecompro").textcontent= "Comprado!";
-alert("el libro ha sido comprado. Telefono: "+telefono+" Targeta:"+targeta+" Libro: "+libro)
+alert("el libro ha sido comprado."+"Nombre: "+nombre1+ " Telefono: "+telefono+" Targeta:"+targeta+" Libro: "+libro)
 document.getElementById("nombrecompro").style.display = 'none';
 }
+
